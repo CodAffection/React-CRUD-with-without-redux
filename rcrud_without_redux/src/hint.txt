@@ -1,0 +1,37 @@
+A/C transaction to a bank account
+
+WITHOUT REDUX
+=============
+
+components
+    - TransactionList 
+    |           |
+    |  (currentIndex,list,onAddOrEdit)
+    |           ▼                                     local storage as DB
+    +---TransactionForm
+
+store (TransactionList)
+* list
+* currentIndex
+
+
+
+WITH REDUX
+==========
+
+components
+    - TransactionList 
+    |                                              REDUX store-(list, currentIndex)  
+    |                                              local storage as DB
+    +---TransactionForm
+
+
+HOW REDUX WORKS ?
+===============
+redux, react-redux
+
+action - obj represents an action
+reducer - based on action, define how to update the current state.
+store - consist of data, will be accessed through whole application.
+
+component -> dispatch(action) -> reducer -> store -> component
